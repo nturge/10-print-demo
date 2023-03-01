@@ -22,7 +22,9 @@ function draw () {
     document.body.innerText += '／'
   }else{
     document.body.innerText += '＼'
-  }}
+  }
+  document.body.scrollTop = document.body.scrollHeight
+}
 
 draw()
 
