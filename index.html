@@ -19,18 +19,18 @@
  const randomColor = Math.floor(Math.random()*16777215).toString(16);
   
   function draw () {
-    requestAnimationFrame(draw)
+   
     let ran = Math.random()
     if (ran > 0.5) {
-      document.body.innerText += '{}' 
+      document.body.innerText += '}' 
       document.body.style.color = "#" + randomColor;
-      document.body.style.fontFamily = "Times New Roman"
+      document.body.style.fontFamily = "Calibri"
     } else {
-    	document.body.innerText += '＼*'
+    	document.body.innerText += '*'
       document.body.style.fontSize = (1000*ran);
       document.body.style.fontFamily = "Papyrus";
     }
-   
+    setTimeout(draw,1000)
   }
 
 	window.addEventListener('click', draw)
