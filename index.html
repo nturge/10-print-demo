@@ -17,15 +17,18 @@
 <script>
 
 function draw () {
-  requestAnimationFrame(draw)
+  const char = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  const charT = ["3"]; 
+  let ran = Math.floor(Math.random()*(char.length+charT.length))
   if(Math.random() > 0.5){
-    document.body.innerText += '／'
+    document.body.innerText += char[ran]
   }else{
-    document.body.innerText += '＼'
+    document.body.innerText += charT[ran]
   }
-  document.body.scrollTop = document.body.scrollHeight
+ setTimeout(draw, 400)
 }
 
-draw()
+  draw()
+
 
 </script>
