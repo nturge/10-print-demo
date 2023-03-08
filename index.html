@@ -3,7 +3,7 @@
   @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap");
   
   body {
-    background-color: white;
+    background-color: cyan;
     color: black;
     font-size: 30px;
     line-height: 30px;
@@ -17,19 +17,21 @@
 <script>
 
   
-   for (let i = 0; i < 1000; i++) {
-    const char = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    let ran = Math.floor(Math.random()*(char.length))
-    let rand = Math.random()
-    const randomColor = Math.floor(Math.random()*16777215).toString(16);
-    if (rand > 0.5) {
-      document.body.innerText += char[ran]
+  function draw () {
+	const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    requestAnimationFrame(draw)
+    let ran = Math.random()
+    if (ran > 0.5) {
+      document.body.innerText += '／' 
       document.body.style.color = "#" + randomColor;
     } else {
-    	document.body.innerText += char[ran]
-      document.body.style.color = "#" + randomColor;
+    	document.body.innerText += '＼'
+      document.body.style.fontSize = (500*ran);
     }
+    document.body.scrollTop = document.body.scrollHeight
   }
+
+	window.addEventListener('load', draw)
   
   
 
