@@ -16,22 +16,23 @@
 
 <script>
 
- const randomColor = Math.floor(Math.random()*16777215).toString(16);
   
   function draw () {
-   	const fps = 1000/10
+   	const fps = 1000/2
    	setTimeout(draw, fps)
     let ran = Math.random()
     if (ran > 0.5) {
+      const randomColor = Math.floor(Math.random()*16777215).toString(16);
       document.body.innerText += '}' 
       document.body.style.color = "#" + randomColor;
+      document.body.style.fontSize = (500*ran);
       document.body.style.fontFamily = "Calibri"
     } else {
     	document.body.innerText += '*{}'
-      document.body.style.fontSize = (500*ran);
+      document.body.style.fontSize = (1000*ran);
       document.body.style.fontFamily = "Papyrus";
     }
-  
+    
   }
 
 	window.addEventListener('load', draw)
