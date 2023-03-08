@@ -15,20 +15,21 @@
 <body></body>
 
 <script>
+  
 
-function draw () {
-  const char = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-  const charT = ["3"]; 
-  let ran = Math.floor(Math.random()*(char.length+charT.length))
-  if(Math.random() > 0.5){
-    document.body.innerText += char[ran]
-  }else{
-    document.body.innerText += charT[ran]
+
+
+   for (let i = 0; i < 1000; i++) {
+    const char = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    let ran = Math.floor(Math.random()*(char.length))
+    let rand = Math.random()
+    if (rand > 0.5) {
+      document.body.innerText += char[ran] 
+    } else {
+    	document.body.innerText += '＼'
+    }
   }
- setTimeout(draw, 400)
-}
 
-  draw()
 
 
 </script>
